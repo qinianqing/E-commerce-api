@@ -1,0 +1,72 @@
+//  Created by Mbb on 2017/5/30.
+extends ../../views/cms/header
+
+block content
+    .egcmscontent
+        link(rel='stylesheet' href='/stylesheets/back/items-new.css')
+        link(rel='stylesheet' href='/stylesheets/back/bootstrap-datetimepicker.min.css')
+        .content-title
+            h4 内容详情
+            .content-title-line
+        .content
+            .row
+                form(name='addUser' action='about:blank' method='post' target='rfFrame').form-horizontal#addUserForm
+                    .fieldset
+                        .form-group
+                            label(for='inputStatus').col-lg-2.control-label *状态
+                            .col-lg-10
+                                select(name='status' style='width:100px').form-control#inputStatus
+                                    - if (data.status == 'on')
+                                        option(value='on') 线上
+                                        option(value='off') 线下
+                                    - else
+                                        option(value='off') 线下
+                                        option(value='on') 线上
+                        .form-group
+                            label.col-lg-2.control-label *类型
+                            .col-lg-10
+                                p#typedata #{data.type}
+                                p(style='color:red;') 类型不能修改
+                        .form-group
+                            label(for='inputTitle').col-lg-2.control-label *标题
+                            .col-lg-10
+                                input(type='text' value="#{data.title}" name='title' required).form-control#inputTitle
+                        .form-group
+                            label(for='inputTopic').col-lg-2.control-label *话题
+                            .col-lg-10
+                                input(type='text' value="#{data.topic}" name='topic' required).form-control#inputTopic
+                        .form-group
+                            label(for='inputAuthor').col-lg-2.control-label *作者
+                            .col-lg-10
+                                input(type='text' value="#{data.author}" name='author' required).form-control#inputAuthor
+                        .form-group
+                            label(for='inputFocus').col-lg-2.control-label *导语
+                            .col-lg-10
+                                input(type='text' value="#{data.focus}" name='focus' required).form-control#inputFocus
+                        .form-group
+                            label(for='inputDetail').col-lg-2.control-label *描述
+                            .col-lg-10
+                                textarea(type='text' name='detail' required).form-control#inputDetail #{data.detail}
+                        .form-group
+                            label(for='inputResource')#inputSourseLabel.col-lg-2.control-label *内容
+                            .col-lg-10
+                                a(href='#{data.content}' target="_blank")#contentA #{data.content}
+                                | <br />
+                                input(type="file" name="content" onchange="onselectresource()" style="display: inline-block").fileupload#inputResource
+                        .form-group
+                            label(for='inputBanner').col-lg-2.control-label 头图
+                            .col-lg-10
+                                a(href='#{data.banner}' target="_blank")#bannerA #{data.banner}
+                                | <br />
+                                input(type="file" name="content" onchange="onselectbanner()" style="display: inline-block").fileupload#inputBanner
+                        .form-group
+                            .col-lg-10.col-lg-offset-2.form-btn-box
+                                //button(type='button' data-dismiss='modal' style='margin-right:10px').btn.btn-default 取消
+                                button(type='submit').btn.btn-lg.btn-primary#addUserSubmit 修改
+                                button(type='button').btn.btn-lg.btn-danger#delete 删除
+                iframe(name='rfFrame' src='about:blank' style='display:none;')#rfFrame
+    <!-- Bootstrap core js -->
+    script(src='https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js')
+    script(src='https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js')
+    script(src='/javascripts/back/bootstrap-datetimepicker.min.js')
+    script(src='/javascripts/back/items-detail.js')

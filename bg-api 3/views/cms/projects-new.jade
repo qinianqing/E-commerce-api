@@ -1,0 +1,77 @@
+//
+   Created by Ziv on 2017/9/19.
+
+extends ./header
+
+block content
+    .egcmscontent
+        link(rel='stylesheet' href='/stylesheets/back/projects-new.css')
+        link(rel='stylesheet' href='/stylesheets/bootstrap-datetimepicker.min.css')
+        .content-title
+            h4 新建商品
+            P 价格配置，只能将字母替换，基础价格必须填，加价和送可以不填
+            .content-title-line
+        .content
+            .row
+                form(name='addUser' action='about:blank' method='post' target='rfFrame').form-horizontal#addUserForm
+                    .fieldset
+                        .form-group
+                            label(style='margin-left:100px;font-size:20px;') 1、场景信息
+                        .form-group
+                            label(for='inputTitle').col-lg-2.control-label 标题
+                            .col-lg-10
+                                input(type='text' placeholder='场景标题，20个字以内' name='title' required).form-control#inputTitle
+                        .form-group
+                            label(for='inputRecommend').col-lg-2.control-label 推荐
+                            .col-lg-10
+                                textarea(type='text' placeholder='向用户推荐这个场景，不要超过100个字' name='recommend' required).form-control#inputRecommend
+                        .form-group
+                            label(for='inputCategory').col-lg-2.control-label 类别
+                            .col-lg-10
+                                textarea(type='text' placeholder='粘贴二级类目ID，不允许同一一级类目下存在多个二级类目，多个二级类目每个一行' name='category' required).form-control#inputCategory
+                        .form-group
+                            label(for='inputBanner').col-lg-2.control-label 封面
+                            .col-lg-10
+                                input(type='text' placeholder='图片链接，不能为空' name='banner' required).form-control#inputBanner
+                        .form-group
+                            label(for='inputVideo').col-lg-2.control-label 视频
+                            .col-lg-10
+                                input(type='text' placeholder='视频链接，可为空' name='video' required).form-control#inputVideo
+                        .form-group
+                            label(for='inputCyc').col-lg-2.control-label 周期
+                            .col-lg-10
+                                input(type='text' placeholder='推荐订阅周期天数，只填整数' name='cyc' required).form-control#inputCyc
+                        .form-group
+                            label(style='margin-left:100px;font-size:20px;') 2、价格配置
+                        .form-group
+                            label(for='inputPrice').col-lg-2.control-label 套餐
+                            .col-lg-10
+                                textarea(type='text' name='detail' required).form-control#inputPrice 1次P元加A元送M，2次P元加A元送M，4次P元加A元送M，6次P元加A元送M，8次P元加A元送M
+                        .form-group
+                            label(for='inputNormalPrice').col-lg-2.control-label 其他
+                            .col-lg-10
+                                input(type='text' placeholder='超出套餐次数，需要设置统一价，只能设置数字，对多小数点后两位' name='cyc' required).form-control#inputNormalPrice
+                        .form-group
+                            label(style='margin-left:100px;font-size:20px;') 3、商品信息
+                        .form-group
+                            label(for='inputTypes').col-lg-2.control-label 偏好
+                            .col-lg-10
+                                textarea(type='text' placeholder='多个偏好，用中文，隔开，可以不填' name='detail' required).form-control#inputTypes
+                        .form-group
+                            label(for='inputStatement').col-lg-2.control-label 声明
+                            .col-lg-10
+                                input(type='text' placeholder='描述当前时机下的问题，可以不填' name='statement' required).form-control#inputStatement
+                        .form-group
+                            label(for='inputPhotos').col-lg-2.control-label 图片
+                            .col-lg-10
+                                textarea(type='text' placeholder='每个图片链接占一行' name='detail' required).form-control#inputPhotos
+                        .form-group
+                            .col-lg-10.col-lg-offset-2.form-btn-box
+                                //button(type='button' data-dismiss='modal' style='margin-right:10px').btn.btn-default 取消
+                                button(type='submit').btn.btn-lg.btn-primary#addProject 提交
+                iframe(name='rfFrame' src='about:blank' style='display:none;')#rfFrame
+    <!-- Bootstrap core js -->
+    script(src='https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js')
+    script(src='https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js')
+    script(src='/javascripts/bootstrap-datetimepicker.min.js')
+    script(src='/javascripts/back/projects-new.js')

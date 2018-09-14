@@ -1,0 +1,28 @@
+// Created by Mbb on 2017/5/29.
+extends ../../views/cms/header
+
+block content
+    .egcmscontent
+        link(rel='stylesheet' href='/stylesheets/back/items.css')
+        link(rel='stylesheet' href='/stylesheets/back/bootstrap-editable.css')
+        .content-title
+            h4 内容列表
+            .content-title-line
+        .content
+            #toolbar
+                select(name='status' style='width:100px').form-control#statusSelect
+                    option(value='all') 全部
+                    option(value='on') 已上线
+                    option(value='off') 未上线
+                button(type='button' onclick="window.location.href='/items/new'").add-btn.btn.btn-primary 创建新内容
+            table.table.table-striped.table-hover.table-box.table-condensed.table-responsive#itemstable
+    <!-- Bootstrap core js -->
+    script(src='https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js')
+    | <script>window.jQuery || document.write('<script src="/javascripts/jquery.min.js"><\/script>')</script>
+    script(src='/javascripts/jquery.form.min.js')
+    script(src='https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js')
+    script(src='https://cdn.bootcss.com/bootstrap-table/1.11.1/bootstrap-table.js')
+    script(src='https://cdn.bootcss.com/bootstrap-table/1.11.1/locale/bootstrap-table-zh-CN.js')
+    script(src='/javascripts/back/bootstrap-editable.js')
+    script(src='https://cdn.bootcss.com/bootstrap-table/1.11.1/extensions/editable/bootstrap-table-editable.js')
+    script(src='/javascripts/back/items.js')

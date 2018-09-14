@@ -1,0 +1,67 @@
+.content-title{
+    margin-top: 30px;
+    margin-left: 20px;
+}
+.content-title-line{
+    position: relative;
+    top: -10px;
+    height: 1px;
+    width: 500px;
+    background-color: #d9d9d9;
+}
+
+.form-btn-box{
+    margin-top: 40px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+
+.search-btn{
+    margin-left: 380px;
+    margin-top: -69px;
+}
+
+.content{
+    margin-left: 20px;
+
+}
+.table-box{
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: auto;
+    outline: 0px;
+}
+.modal-information{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+.info-item{
+    width: 40%;
+}
+.form_datetime{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+.control-label{
+    margin-right: 20px;
+}
+
+.table-box{
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: auto;
+    outline: 0px;
+}
+table td{
+    word-break: keep-all;
+    white-space: nowrap;
+}

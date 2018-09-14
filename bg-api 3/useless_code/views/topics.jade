@@ -1,0 +1,24 @@
+// Created by Mbb on 2017/5/29.
+extends ../../views/cms/header
+
+block content
+    .egcmscontent
+        link(rel='stylesheet' href='/stylesheets/back/items.css')
+        link(rel='stylesheet' href='/stylesheets/back/bootstrap-editable.css')
+        .content-title
+            h4 话题列表
+            .content-title-line
+        .content
+            #toolbar
+                button(type='button'  onclick="window.location.href='/topics/new'").add-btn-topic.btn.btn-primary 创建新话题
+            table.table.table-striped.table-hover.table-box.table-condensed.table-responsive#itemstable
+    <!-- Bootstrap core js -->
+    script(src='https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js')
+    | <script>window.jQuery || document.write('<script src="/javascripts/jquery.min.js"><\/script>')</script>
+    script(src='/javascripts/jquery.form.min.js')
+    script(src='https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js')
+    script(src='https://cdn.bootcss.com/bootstrap-table/1.11.1/bootstrap-table.js')
+    script(src='https://cdn.bootcss.com/bootstrap-table/1.11.1/locale/bootstrap-table-zh-CN.js')
+    script(src='/javascripts/back/bootstrap-editable.js')
+    script(src='https://cdn.bootcss.com/bootstrap-table/1.11.1/extensions/editable/bootstrap-table-editable.js')
+    script(src='/javascripts/back/topics.js')

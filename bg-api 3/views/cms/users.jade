@@ -1,0 +1,43 @@
+// Created by zhangwei on 17/5/1.
+extends ./header
+
+block content
+    .egcmscontent
+        link(rel='stylesheet' href='/stylesheets/back/users.css')
+        .content-title
+            h4 CMS用户列表
+            a(href='javascript:void(0);' onclick='showAddUserModal()').btn.btn-primary.add-user-btn 创建新用户
+            .content-title-line
+        .content
+            table.table.table-striped.table-hover#usertable
+        .modal(style='margin-top:100px')#addUserModal
+            .modal-dialog
+                .modal-content
+                    .modal-header
+                        button(type='button' data-dismiss='modal' aria-hidden='true').close &times;
+                        h4.modal-title 新建管理员
+                    .modal-body
+                        .row
+                            form(name='addUser' action='about:blank' method='post' target='rfFrame').form-horizontal#addUserForm
+                                .fieldset
+                                    .form-group
+                                        label(for='inputEmail').col-lg-2.control-label 邮箱地址
+                                        .col-lg-10
+                                            input(type='email' placeholder='公司邮箱,需填写@yongxin.io' name='email' required).form-control#inputEmail
+                                    .form-group
+                                        label(for='inputPassword').col-lg-2.control-label 初始密码
+                                        .col-lg-10
+                                            input(type='text' placeholder='初始密码' name='password' required).form-control#inputPassword
+                                    .form-group
+                                        .col-lg-10.col-lg-offset-2.form-btn-box
+                                            button(type='button' data-dismiss='modal' style='margin-right:10px').btn.btn-default 取消
+                                            button(type='submit').btn.btn-primary#addUserSubmit 确定
+                            iframe(name='rfFrame' src='about:blank' style='display:none;')#rfFrame
+    <!-- Bootstrap core js -->
+    script(src='/javascripts/jquery.min.js')
+    script(src='/javascripts/jquery.form.min.js')
+    | <script>window.jQuery || document.write('<script src="/javascripts/jquery.min.js"><\/script>')</script>
+    script(src='https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js')
+    script(src='https://cdn.bootcss.com/bootstrap-table/1.11.1/bootstrap-table.js')
+    script(src='https://cdn.bootcss.com/bootstrap-table/1.11.1/locale/bootstrap-table-zh-CN.js')
+    script(src='/javascripts/back/users.js')

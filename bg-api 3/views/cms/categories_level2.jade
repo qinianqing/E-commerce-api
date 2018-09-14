@@ -1,0 +1,22 @@
+//
+   Created by Mbb on 2017/9/14.
+
+extends ./header
+
+block content
+    .egcmscontent
+        link(rel='stylesheet' href='/stylesheets/back/category.css')
+        .content-title
+            h4 #{category0}（所属一级类目）
+            p 创建二级类目发邮件给ziv@yongxin.io审批
+            .content-title-line
+        .content
+            table.table.table-striped.table-hover#categorylevel2
+    <!-- Bootstrap core js -->
+    script(src='https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js')
+    script(src='/javascripts/jquery.form.min.js')
+    | <script>window.jQuery || document.write('<script src="/javascripts/jquery.min.js"><\/script>')</script>
+    script(src='https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js')
+    script(src='https://cdn.bootcss.com/bootstrap-table/1.11.1/bootstrap-table.js')
+    script(src='https://cdn.bootcss.com/bootstrap-table/1.11.1/locale/bootstrap-table-zh-CN.js')
+    script(src='/javascripts/back/category.js')

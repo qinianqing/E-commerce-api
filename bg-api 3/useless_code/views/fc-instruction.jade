@@ -1,0 +1,62 @@
+// Created by Mbb on 2017/5/4.
+//Created by zhangwei on 17/5/1.
+extends ../../views/cms/header
+
+block content
+    .egcmscontent
+        link(rel='stylesheet' href='/stylesheets/back/fc.css')
+        link(rel='stylesheet' href='/stylesheets/back/bootstrap-editable.css')
+        link(rel='stylesheet' href='/stylesheets/back/bootstrap-table-reorder-rows.css')
+        .content
+            ul.nav.nav-pills.nav-tab-box
+                li(role='presentation')
+                    a(href='/fc') 首页提示语配置
+                li(role='presentation').active
+                    a(href='#') 使用指南配置
+                li(role='presentation')
+                    a(href='/fc/qa') 常见问题配置
+                li(role='presentation')
+                    a(href='/fc/users') 用户管理
+            .content-title-line
+            #toolbar
+                button(type='button' onclick='showAddUserModal()').btn.btn-success 添加内容
+                button(type='button' onclick='deleteIns()' style='margin-left:20px;display:none;').btn.btn-danger#deletebtn 删除内容
+            table(data-use-row-attr-func='true' data-reorderable-rows='true').table.table-striped.table-hover#instructiontable
+        .modal(style='margin-top:100px')#addUserModal
+            .modal-dialog
+                .modal-content
+                    .modal-header
+                        button(type='button' data-dismiss='modal' aria-hidden='true').close &times;
+                        h4.modal-title 新增内容
+                    .modal-body
+                        .row
+                            form(name='addUser' action='about:blank' method='post' target='rfFrame').form-horizontal#addUserForm
+                                .fieldset
+                                    .form-group
+                                        label(for='inputType').col-lg-2.control-label 类型
+                                        .col-lg-8
+                                            select(type='text' name='type' required).form-control#inputType
+                                                option(value='title') 标题
+                                                option(value='text') 段落
+                                                option(value='photo') 图片
+                                    .form-group
+                                        label(for='inputContent').col-lg-2.control-label 内容
+                                        .col-lg-8
+                                            textarea(type='text' placeholder='输入答案' name='content' required).form-control#inputContent
+                                    .form-group
+                                        .col-lg-10.col-lg-offset-2.form-btn-box
+                                            button(type='button' data-dismiss='modal' style='margin-right:10px').btn.btn-default 取消
+                                            button(type='submit').btn.btn-primary#addUserSubmit 确定
+                            iframe(name='rfFrame' src='about:blank' style='display:none;')#rfFrame
+    <!-- Bootstrap core js -->
+    script(src='/javascripts/jquery.min.js')
+    script(src='/javascripts/jquery.form.min.js')
+    | <script>window.jQuery || document.write('<script src="/javascripts/jquery.min.js"><\/script>')</script>
+    script(src='https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js')
+    script(src='https://cdn.bootcss.com/bootstrap-table/1.11.1/bootstrap-table.js')
+    script(src='https://cdn.bootcss.com/bootstrap-table/1.11.1/locale/bootstrap-table-zh-CN.js')
+    script(src='/javascripts/back/bootstrap-editable.js')
+    script(src='https://cdn.bootcss.com/bootstrap-table/1.11.1/extensions/editable/bootstrap-table-editable.js')
+    script(src='/javascripts/back/jquery.tablednd.js')
+    script(src='/javascripts/back/bootstrap-table-reorder-rows.js')
+    script(src='/javascripts/back/fc-instruction.js')

@@ -1,0 +1,45 @@
+// Created by Ziv on 2017/6/21.
+extends ../../views/cms/header
+
+block content
+    .egcmscontent
+        link(rel='stylesheet' href='/stylesheets/back/items-new.css')
+        .content-title
+            h4 新建话题
+            p 头图尺寸：TODO
+            .content-title-line
+        .content
+            .row
+                form(name='addUser' action='about:blank' method='post' target='rfFrame').form-horizontal#addUserForm
+                    .fieldset
+                        .form-group
+                            label(for='inputTitle').col-lg-2.control-label *标题
+                            .col-lg-10
+                                input(type='text' placeholder='不要超过30个字' name='title' required).form-control#inputTitle
+                        .form-group
+                            label(for='inputAuthor').col-lg-2.control-label *作者
+                            .col-lg-10
+                                input(type='text' placeholder='用户端展现谁在维护这个话题' name='author' required).form-control#inputAuthor
+                        .form-group
+                            label(for='inputFocus').col-lg-2.control-label *导语
+                            .col-lg-10
+                                input(type='text' placeholder='一句吸引人的描述，不要超过20个字' name='focus' required).form-control#inputFocus
+                        .form-group
+                            label(for='inputDetail').col-lg-2.control-label *描述
+                            .col-lg-10
+                                textarea(type='text' placeholder='详细描述，不要超过300个字' name='detail' required).form-control#inputDetail
+                        .form-group
+                            label(for='inputBanner').col-lg-2.control-label *头图
+                            .col-lg-10
+                                input(type="file" name="content" onchange="onselectbanner()" style="display: inline-block" required).fileupload#inputBanner
+                        .form-group
+                            .col-lg-10.col-lg-offset-2.form-btn-box
+                                //button(type='button' data-dismiss='modal' style='margin-right:10px').btn.btn-default 取消
+                                button(type='submit').btn.btn-lg.btn-primary#addUserSubmit 提交
+                iframe(name='rfFrame' src='about:blank' style='display:none;')#rfFrame
+    <!-- Bootstrap core js -->
+    script(src='https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js')
+    script(src='https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js')
+    script(src='/javascripts/back/bootstrap-datetimepicker.min.js')
+    script(src='/javascripts/back/topics-new.js')
+

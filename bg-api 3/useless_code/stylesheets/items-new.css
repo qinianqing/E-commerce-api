@@ -1,0 +1,52 @@
+.content-title{
+    margin-top: 30px;
+    margin-left: 20px;
+}
+
+.content-title-line{
+    margin-top: 10px;
+    height: 1px;
+    width: 500px;
+    background-color: #d9d9d9;
+}
+
+.content{
+    margin-top: 20px;
+    margin-left: -15px;
+    width: 80%;
+}
+
+.control-label{
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.form-control{
+    margin-top: 5px;
+}
+
+#inputDetail{
+    height: 80px;
+}
+
+.fileupload{
+    margin-top: 12px;
+}
+
+.btn{
+    margin-top: 10px;
+}
+
+#addUserSubmit{
+    width: 200px;
+    height: 40px;
+    font-size: 16px;
+    margin-left: -80px;
+    margin-top: 20px;
+}
+#delete{
+    height: 40px;
+    font-size: 16px;
+    margin-left: 30px;
+    margin-top: 20px;
+}

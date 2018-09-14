@@ -1,0 +1,52 @@
+// Created by Ziv on 2017/6/21.
+extends ../../views/cms/header
+
+block content
+    .egcmscontent
+        link(rel='stylesheet' href='/stylesheets/back/items-new.css')
+        .content-title
+            h4 话题详情
+            p 头图尺寸：TODO
+            .content-title-line
+        .content
+            .row
+                form(name='addUser' action='about:blank' method='post' target='rfFrame').form-horizontal#addUserForm
+                    .fieldset
+                        .form-group
+                            label.col-lg-2.control-label * ID
+                            .col-lg-10
+                                p(style='margin-top:9px;font-size:14px;color:red;') #{data.id}
+                        .form-group
+                            label(for='inputTitle').col-lg-2.control-label *标题
+                            .col-lg-10
+                                input(type='text' value='#{data.title}' name='title' required).form-control#inputTitle
+                        .form-group
+                            label(for='inputAuthor').col-lg-2.control-label *作者
+                            .col-lg-10
+                                input(type='text' value='#{data.author}' name='author' required).form-control#inputAuthor
+                        .form-group
+                            label(for='inputFocus').col-lg-2.control-label *导语
+                            .col-lg-10
+                                input(type='text' value='#{data.focus}' name='focus' required).form-control#inputFocus
+                        .form-group
+                            label(for='inputDetail').col-lg-2.control-label *描述
+                            .col-lg-10
+                                textarea(type='text' name='detail' required).form-control#inputDetail #{data.detail}
+                        .form-group
+                            label(for='inputBanner').col-lg-2.control-label *头图
+                            .col-lg-10
+                                a(href='#{data.poster}' target="_blank")#bannerA #{data.poster}
+                                | <br />
+                                input(type="file" name="content" onchange="onselectbanner()" style="display: inline-block").fileupload#inputBanner
+                        .form-group
+                            .col-lg-10.col-lg-offset-2.form-btn-box
+                                //button(type='button' data-dismiss='modal' style='margin-right:10px').btn.btn-default 取消
+                                button(type='submit').btn.btn-lg.btn-primary#addUserSubmit 修改
+                iframe(name='rfFrame' src='about:blank' style='display:none;')#rfFrame
+    <!-- Bootstrap core js -->
+    script(src='https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js')
+    script(src='https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js')
+    script(src='/javascripts/back/bootstrap-datetimepicker.min.js')
+    script(src='/javascripts/back/topics-detail.js')
+
+

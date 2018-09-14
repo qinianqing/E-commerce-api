@@ -1,0 +1,74 @@
+// Created by Mbb on 2017/5/5.
+
+extends ../../views/cms/header
+
+block content
+    .egcmscontent
+        link(rel='stylesheet' href='/stylesheets/back/fc.css')
+        link(rel='stylesheet' href='/stylesheets/back/bootstrap-editable.css')
+        link(rel='stylesheet' href='/stylesheets/back/bootstrap-table-reorder-rows.css')
+        .content
+            ul.nav.nav-pills.nav-tab-box
+                li(role='presentation')
+                    a(href='/fc') 首页提示语配置
+                li(role='presentation')
+                    a(href='/fc/instruction') 使用指南配置
+                li(role='presentation')
+                    a(href='/fc/qa') 常见问题配置
+                li(role='presentation').active
+                    a(href='/fc/users') 用户管理
+            .content-title-line
+            #toolbar
+                select(name='type' style='width:100px;').form-control#statusSelect
+                    option(value='all') 全部
+                    option(value='2') 站点
+                    option(value='1') 供应商
+                    option(value='0') 即趣运营
+                button(type='button' onclick='showAddUserModal()' style='position:absolute;top:0px;left:150px;').btn.btn-success 添加用户
+                button(type='button' onclick='deleteIns()' style='position:absolute;top:0px;left:260px;display:none;').btn.btn-danger#deletebtn 删除用户
+            table.table.table-striped.table-hover#qatable
+        .modal(style='margin-top:100px')#addUserModal
+            .modal-dialog
+                .modal-content
+                    .modal-header
+                        button(type='button' data-dismiss='modal' aria-hidden='true').close &times;
+                        h4.modal-title 新建FC用户
+                        p(style='color:red;') 站点名称必须与有赞系统的门店名称完全相同
+                    .modal-body
+                        .row
+                            form(name='addUser' action='about:blank' method='post' target='rfFrame').form-horizontal#addUserForm
+                                .fieldset
+                                    .form-group
+                                        label(for='inputType').col-lg-2.control-label 用户类型
+                                        .col-lg-8
+                                            select(type='text' name='authID' required).form-control#inputType
+                                                option(value='2') 站点
+                                                option(value='1') 供应商
+                                                option(value='0') 即趣运营
+                                    .form-group
+                                        label(for='inputPartner').col-lg-2.control-label 合作方名称
+                                        .col-lg-8
+                                            input(type='text' placeholder='请反复确认' name='belongPartner' required).form-control#inputPartner
+                                    .form-group
+                                        label(for='inputMobile').col-lg-2.control-label 手机号
+                                        .col-lg-8
+                                            input(type='text' placeholder='用户手机号' name='phoneNumber' required).form-control#inputMobile
+                                    .form-group
+                                        label(for='inputName').col-lg-2.control-label 姓名
+                                        .col-lg-8
+                                            input(type='text' placeholder='用户名称' name='name' required).form-control#inputName
+                                    .form-group
+                                        .col-lg-10.col-lg-offset-2.form-btn-box
+                                            button(type='button' data-dismiss='modal' style='margin-right:10px').btn.btn-default 取消
+                                            button(type='submit').btn.btn-primary#addUserSubmit 确定
+                            iframe(name='rfFrame' src='about:blank' style='display:none;')#rfFrame
+    <!-- Bootstrap core js -->
+    script(src='/javascripts/jquery.min.js')
+    script(src='/javascripts/jquery.form.min.js')
+    | <script>window.jQuery || document.write('<script src="/javascripts/jquery.min.js"><\/script>')</script>
+    script(src='https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js')
+    script(src='https://cdn.bootcss.com/bootstrap-table/1.11.1/bootstrap-table.js')
+    script(src='https://cdn.bootcss.com/bootstrap-table/1.11.1/locale/bootstrap-table-zh-CN.js')
+    script(src='/javascripts/back/bootstrap-editable.js')
+    script(src='https://cdn.bootcss.com/bootstrap-table/1.11.1/extensions/editable/bootstrap-table-editable.js')
+    script(src='/javascripts/back/fc-users.js')

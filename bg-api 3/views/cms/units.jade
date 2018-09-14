@@ -1,0 +1,33 @@
+// Created by Ziv on 2017/9/14.
+
+extends ./header
+
+block content
+    .egcmscontent
+        link(rel='stylesheet' href='/stylesheets/back/units.css')
+        link(rel='stylesheet' href='/stylesheets/bootstrap-datetimepicker.min.css')
+        link(rel='stylesheet' href='/stylesheets/bootstrap-editable.css')
+        .content-title
+            h4 包裹列表
+            p(style='color:red;') 只能导出当前页的数据
+            .content-title-line
+        .content
+            .input-append.date.form_datetime.date-box#toolbar
+                label(for='dateselect').control-label 送达日期
+                input(size='16' type='text' value='#{today}' readonly=)#dateselect
+                span.add-on
+                    i.icon-calendar
+            table.table.table-striped.table-hover.table-box.table-condensed.table-responsive#unittable
+    <!-- Bootstrap core js -->
+    script(src='https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js')
+    | <script>window.jQuery || document.write('<script src="/javascripts/jquery.min.js"><\/script>')</script>
+    script(src='https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js')
+    script(src='https://cdn.bootcss.com/bootstrap-table/1.11.1/bootstrap-table.js')
+    script(src='https://cdn.bootcss.com/bootstrap-table/1.11.1/locale/bootstrap-table-zh-CN.js')
+    script(src='/javascripts/bootstrap-datetimepicker.min.js')
+    script(src='https://cdn.bootcss.com/bootstrap-table/1.11.1/extensions/export/bootstrap-table-export.js')
+    script(src='/javascripts/bootstrap-editable.js')
+    script(src='https://cdn.bootcss.com/bootstrap-table/1.11.1/extensions/editable/bootstrap-table-editable.js')
+    script(src='/javascripts/tableExport.min.js')
+    //script(src='https://cdn.bootcss.com/bootstrap-table/1.11.1/extensions/export/bootstrap-table-export.min.js')
+    script(src='/javascripts/back/units.js')

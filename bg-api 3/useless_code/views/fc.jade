@@ -1,0 +1,30 @@
+//Created by zhangwei on 17/5/1.
+extends ../../views/cms/header
+
+block content
+    .egcmscontent
+        link(rel='stylesheet' href='/stylesheets/back/fc.css')
+        link(rel='stylesheet' href='/stylesheets/back/bootstrap-editable.css')
+        .content
+            ul.nav.nav-pills.nav-tab-box
+                li(role='presentation').active
+                    a(href='#') 首页提示语配置
+                li(role='presentation')
+                    a(href='/fc/instruction') 使用指南配置
+                li(role='presentation')
+                    a(href='/fc/qa') 常见问题配置
+                li(role='presentation')
+                    a(href='/fc/users') 用户管理
+            .content-title-line(style='margin-bottom:20px;')
+            table.table.table-striped.table-hover#mottotable
+
+    <!-- Bootstrap core js -->
+    script(src='/javascripts/jquery.min.js')
+    script(src='/javascripts/jquery.form.min.js')
+    | <script>window.jQuery || document.write('<script src="/javascripts/jquery.min.js"><\/script>')</script>
+    script(src='https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js')
+    script(src='https://cdn.bootcss.com/bootstrap-table/1.11.1/bootstrap-table.js')
+    script(src='https://cdn.bootcss.com/bootstrap-table/1.11.1/locale/bootstrap-table-zh-CN.js')
+    script(src='/javascripts/back/bootstrap-editable.js')
+    script(src='https://cdn.bootcss.com/bootstrap-table/1.11.1/extensions/editable/bootstrap-table-editable.js')
+    script(src='/javascripts/back/fc.js')

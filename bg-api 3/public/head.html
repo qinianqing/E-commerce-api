@@ -1,0 +1,88 @@
+<html>
+<head>
+    <style>
+        div{
+            margin-bottom: 10px;
+        }
+        .handle-date{
+            position: absolute;
+            right: 0;
+        }
+        .phone{
+            position: absolute;
+            right: 0;
+        }
+        .tab-table{
+            margin:0 auto;
+            text-align: center;
+        }
+        th{
+            padding: 5px 0;
+        }
+        td{
+            padding: 3px 0;
+        }
+        .tr1{
+            color: white;
+            background-color: #5b9bd5;
+        }
+        .tr2{
+            background-color: #d3ddef;
+        }
+        .tr3{
+            background-color: #eaeff7;
+        }
+        .tr4{
+            background-color: #d3ddef;
+        }
+        .tr5{
+            background-color: #eaeff7;
+        }
+        .tr6{
+            background-color: #d3ddef;
+        }
+        .order{
+            width: 80px;
+        }
+        .num{
+
+            width: 120px;
+        }
+        .name{
+            width: 200px;
+        }
+        .price{
+            width: 100px;
+        }
+        .number{
+            width: 60px;
+        }
+        .rental{
+            width: 80px;
+        }
+    </style>
+</head>
+<body>
+<div>
+                      <span>用户id：${req.query.user_id}</span>
+                      <span class="handle-date">邮包处理时间：${req.query.handle_date}</span>
+</div>
+<div>
+    <span>联系人：${req.query.contact}</span>
+    <span class="phone">联系电话：${req.query.phone}</span>
+</div>
+<div><span class="address">地址：${req.query.address}</span></div>
+
+<table class="tab-table">
+    <tr class="tr1">
+        <th class="order">序号</th>
+        <th class="num">商品编号</th>
+        <th class="name">商品名称</th>
+        <th class="price">单价(元)</th>
+        <th class="number">数量</th>
+        <th class="rental">金额(元)</th>
+    </tr>
+    <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+</table>
+</body>
+</html>

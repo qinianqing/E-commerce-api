@@ -1,0 +1,65 @@
+// Created by zhangwei on 17/5/1.
+doctype html
+html
+    head
+        title 十分CMS
+        meta(charset='utf-8')
+        meta(http-equiv='X-UA-Compatible' content="IE=edge")
+        meta(name='viewport' content='width=device-width,initial-scale=1')
+        meta(name='renderer' content='webkit')
+        meta(name='author' content='北京即趣科技有限公司')
+        <!-- Bootstrap core css -->
+        link(rel='stylesheet' href='/stylesheets/paper/bootstrap.min.css')
+        <!-- IE10 viewport hack for Surface/desktop Window 8 bug -->
+        link(rel='stylesheet' href='/stylesheets/ie10-viewport-bug-workaround.css')
+        link(rel='stylesheet' href='/stylesheets/font-awesome.min.css')
+        link(rel='stylesheet' href='/stylesheets/back/common.css')
+        link(rel='stylesheet' href='https://cdn.bootcss.com/bootstrap-table/1.11.1/bootstrap-table.css')
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!-- [if lt IE 9] -->
+        script(src='https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js')
+        script(src='https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js')
+        <!-- [endif] -->
+    body
+        .egcmsnavbar
+            nav.navbar.navbar-default
+                .container-fluid
+                    .navbar-header
+                        a(href='/').navbar-brand 十分CMS
+                    .collapse.navbar-collapse#cms-navbar
+                        ul.nav.navbar-nav.navbar-right
+                            li
+                                a(href='#')
+                                    i 你好, #{user_name}
+                            li
+                                a(style="z-index:99999;" href='/login/out') 退出
+        .egcmsleftnav
+            ul.nav.nav-list
+                //li
+                    a(href='/homepagesetting')
+                        | <i class="icon-tags"></i> 首页配置
+                li
+                    a(href='/orders')
+                        | <i class="icon-home"></i> 订单管理
+                li
+                    a(href='/units')
+                        | <i class="icon-beaker"></i> 包裹管理
+                li
+                    a(href='/categories')
+                        | <i class="icon-gift"></i> 类目管理
+                li
+                    a(href='/projects')
+                        | <i class="icon-coffee"></i> 商品管理
+                li
+                    a(href='/weapp')
+                        | <i class="icon-trophy"></i> 应用设置
+                li
+                    a(href='/users')
+                        | <i class="icon-user-md"></i> 用户管理
+                li
+                    p
+                li
+                    a(href='/upload' target='_blank')
+                        | <i class="icon-plane"></i> 上传媒体
+            .left-line
+        block content

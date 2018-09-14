@@ -1,0 +1,24 @@
+.add-btn-topic{
+
+}
+.add-btn{
+    position:absolute;
+    top:0px;
+    left:150px;
+}
+
+.content-title{
+    margin-top: 30px;
+    margin-left: 20px;
+}
+
+.content-title-line{
+    margin-top: 10px;
+    height: 1px;
+    width: 500px;
+    background-color: #d9d9d9;
+}
+
+.content{
+    margin-left: 20px;
+}

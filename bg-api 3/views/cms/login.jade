@@ -1,0 +1,41 @@
+//Created by zhangwei on 17/5/1.
+doctype html
+html
+    head
+        title= title
+        meta(charset='utf-8')
+        meta(http-equiv='X-UA-Compatible' content="IE=edge")
+        meta(name='viewport' content='width=device-width,initial-scale=1')
+        meta(name='renderer' content='webkit')
+        meta(name='author' content='北京即趣科技有限公司')
+        <!-- Bootstrap core css -->
+        link(rel='stylesheet' href='/stylesheets/paper/bootstrap.min.css')
+        <!-- IE10 viewport hack for Surface/desktop Window 8 bug -->
+        link(rel='stylesheet' href='/stylesheets/ie10-viewport-bug-workaround.css')
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!-- [if lt IE 9] -->
+        script(src='https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js')
+        script(src='https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js')
+        <!-- [endif] -->
+
+body
+    link(rel='stylesheet' href='/stylesheets/back/login.css')
+    h3.pagetitle= title
+    .container
+        form(name='login' method='post').form-signin#login
+            h4.form-signin-heading 请先登录
+            .loginalert(style='visibility: #{alertstatus}')
+                .alert.alert-dismissible.alert-danger
+                    p 账号或密码错误
+            label(for='inputEmail').sr-only 工作邮箱地址
+            input(type='email' placeholder='邮箱地址' name='email' autofocus required).form-control#inputEmail
+            label(for='inputPassword').sr-only 密码
+            input(type='password' placeholder='密码' name='password' required).form-control#inputPassword
+            .morefunc
+                //.checkbox
+                    | <label><input type="checkbox" name='remember-me' value="true"> 记住我</label>
+                //.fogetpassword
+                    a(href='/login/forgetpassword') 重置/忘记密码
+            button(type='submit').btn.btn-lg.btn-primary.btn-block 登录
+    script(src='https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js')
+    //script(src='javascripts/login.js')

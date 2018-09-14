@@ -1,0 +1,89 @@
+//
+   Created by Ziv on 2017/9/19.
+
+extends ./header
+
+block content
+    .egcmscontent
+        link(rel='stylesheet' href='/stylesheets/back/projects-detail.css')
+        link(rel='stylesheet' href='/stylesheets/bootstrap-datetimepicker.min.css')
+        .content-title
+            h4 新建商品
+            P 价格配置，只能将字母替换，基础价格必须填，加价和送可以不填
+            .content-title-line
+        .content
+            .row
+                form(name='addUser' action='about:blank' method='post' target='rfFrame').form-horizontal#addUserForm
+                    .fieldset
+                        .form-group
+                            label(style='margin-left:100px;font-size:20px;') 1、场景信息
+                        .form-group
+                            label(for='inputStatus').col-lg-2.control-label 状态
+                            .col-lg-10
+                                select(name='status' style='width:100px').form-control#inputStatus
+                                    - if (data.status == 'on')
+                                        option(value='on') 线上
+                                        option(value='off') 线下
+                                    - else
+                                        option(value='off') 线下
+                                        option(value='on') 线上
+                        .form-group
+                            label(for='inputTitle').col-lg-2.control-label 标题
+                            .col-lg-10
+                                input(type='text' value="#{data.title}" name='title' required).form-control#inputTitle
+                        .form-group
+                            label(for='inputRecommend').col-lg-2.control-label 推荐
+                            .col-lg-10
+                                textarea(type='text' name='recommend' required).form-control#inputRecommend #{data.recommend}
+                        .form-group
+                            label(for='inputCategory').col-lg-2.control-label 类别
+                            .col-lg-10
+                                textarea(type='text' name='category' required).form-control#inputCategory #{data.category}
+                        .form-group
+                            label(for='inputBanner').col-lg-2.control-label 封面
+                            .col-lg-10
+                                input(type='text' value="#{data.banner}" name='banner' required).form-control#inputBanner
+                        .form-group
+                            label(for='inputVideo').col-lg-2.control-label 视频
+                            .col-lg-10
+                                input(type='text' value="#{data.video}" name='video' required).form-control#inputVideo
+                        .form-group
+                            label(for='inputCyc').col-lg-2.control-label 周期
+                            .col-lg-10
+                                input(type='text' value="#{data.cyc}" name='cyc' required).form-control#inputCyc
+                        .form-group
+                            label(style='margin-left:100px;font-size:20px;') 2、价格配置
+                        .form-group
+                            label(for='inputPrice').col-lg-2.control-label 套餐
+                            .col-lg-10
+                                textarea(type='text' name='price' required).form-control#inputPrice #{data.price}
+                        .form-group
+                            label(for='inputNormalPrice').col-lg-2.control-label 其他
+                            .col-lg-10
+                                input(type='text' value="#{data.normalPrice}" name='cyc' required).form-control#inputNormalPrice
+                        .form-group
+                            label(style='margin-left:100px;font-size:20px;') 3、商品信息
+                        .form-group
+                            label(for='inputTypes').col-lg-2.control-label 偏好
+                            .col-lg-10
+                                textarea(type='text' name='types' required).form-control#inputTypes #{data.types}
+                        .form-group
+                            label(for='inputStatement').col-lg-2.control-label 声明
+                            .col-lg-10
+                                input(type='text' value="#{data.statement}" name='statement' required).form-control#inputStatement
+                        .form-group
+                            label(for='inputPhotos').col-lg-2.control-label 图片
+                            .col-lg-10
+                                textarea(type='text' name='detail' required).form-control#inputPhotos #{data.photos}
+                        .form-group
+                            .col-lg-10.col-lg-offset-2.form-btn-box
+                                //button(type='button' data-dismiss='modal' style='margin-right:10px').btn.btn-default 取消
+                                button(type='submit').btn.btn-lg.btn-primary#addProject 提交
+                iframe(name='rfFrame' src='about:blank' style='display:none;')#rfFrame
+    <!-- Bootstrap core js -->
+    script(src='https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js')
+    script(src='https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js')
+    script(src='/javascripts/bootstrap-datetimepicker.min.js')
+    script(src='/javascripts/back/projects-detail.js')
+
+

@@ -1,0 +1,24 @@
+// Created by Mbb on 2017/9/13.
+
+extends ./header
+
+block content
+    .egcmscontent
+        link(rel='stylesheet' href='/stylesheets/toast.css')
+        link(rel='stylesheet' href='/stylesheets/back/upload.css')
+        .content-title
+            h4 上传图片/视频
+            p 成功后将展示链接
+            .content-title-line
+        .content
+            a(href='javascript:;').a-upload 选择文件
+                input(type="file" name="content" onchange="uploadMedia()" style="display: inline-block" required)#uploadMedia
+            p.lead.status
+
+    <!-- Bootstrap core js -->
+    script(src='https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js')
+    script(src='https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js')
+    script(src='/javascripts/toast.js')
+    script(src='/javascripts/clipboard.min.js')
+    script(src='/javascripts/back/upload.js')
+

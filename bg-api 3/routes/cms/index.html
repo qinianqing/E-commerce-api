@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    var a = 'hhh';
+    var b = 'jjj';
+    var c = undefined;
+    var e = undefined;
+    var f = ' ';
+    var dd = a + f + b +f;
+    var d = a + f + c + b + e + f ;
+      var s =  d.replace("undefined","");
+      var ss = s.replace("undefined","");
+     let type = ss.replace(/(\s*$)/g, "");
+
+     console.log(s)
+    console.log(ss)
+    console.log(type);
+
+    console.log(dd)
+    // var specification = [
+    //     {
+    //     specification_details:'规格',
+    //     specification_name:'hah',
+    // },
+    // {
+    //     specification_details:'呵呵',
+    //         specification_name:'哈哈',
+    // },
+    // {
+    //     specification_details:'ii',
+    //         specification_name:'看看',
+    // },
+    // {
+    //     specification_details:'让人',
+    //         specification_name:'方法',
+    // },
+    // {
+    //     specification_details:'kk',
+    //         specification_name:'',
+    // },
+    // {
+    //     specification_details:'',
+    //         specification_name:'',
+    // },
+    // ];
+    // var message = [];
+    // for ( var i = 0; i< specification.length; i++){
+    //     let item = {
+    //         specification_details:specification[i].specification_details,
+    //         specification_name:specification[i].specification_name
+    //     };
+    //     if(specification[i].specification_details !== "" && specification[i].specification_name !== ""){
+    //         message.push(item)
+    //     }else{
+    //
+    //     }
+    //     // message.push(item);
+    // }
+    // console.log('message:',message);
+
+    // for (var i = 0; i < specification.length; i++){
+    //     if(specification[i] === "" || specification[i] === "undefined") {
+    //         delete  specification[i];
+    //         specification.lengt --
+    //     }
+    //     console.log(specification);
+    // }
+    // console.log(specification);
+
+
+    // Array.prototype.remove=function(dx)
+    // {
+    //     if(isNaN(dx)||dx>this.length){return false;}
+    //     for(var i=0,n=0;i<this.length;i++)
+    //     {
+    //         if(this[i]!=this[dx])
+    //         {
+    //             this[n++]=this[i]
+    //         }
+    //     }
+    //     this.length-=1
+    // }
+    // a = ['1','2','3','4','5'];
+    // alert("elements: "+a+"nLength: "+a.length);
+    // a.remove(0); //删除下标为0的元素
+    // alert("elements: "+a+"nLength: "+a.length);
+
+</script>

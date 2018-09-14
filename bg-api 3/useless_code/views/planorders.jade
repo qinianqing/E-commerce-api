@@ -1,0 +1,51 @@
+//Created by zhangwei on 17/5/1.
+extends ../../views/cms/header
+
+block content
+    .egcmscontent
+        link(rel='stylesheet' href='/stylesheets/back/planorders.css')
+        link(rel='stylesheet' href='/stylesheets/back/bootstrap-datetimepicker.min.css')
+        link(rel='stylesheet' href='/stylesheets/back/bootstrap-editable.css')
+        .content-title
+            h4 托管订单列表（点击处理)
+            p(style='color:red;') 起始日期不是工作日或者在当日之前需电话用户确认日期
+            .content-title-line
+        .content
+            #toolbar
+                select(name='status' style='width:100px').form-control#statusSelect
+                    option(value='all') 全部
+                    option(value='init') 未处理
+                    option(value='done') 已处理
+                    option(value='feedback') 发生维权
+            table.table.table-striped.table-hover.table-box.table-condensed.table-responsive#hostplantable
+        .modal(style='margin-top:100px')#addUnitModal
+            .modal-dialog
+                .modal-content
+                    .modal-header
+                        button(type='button' data-dismiss='modal' aria-hidden='true').close &times;
+                        h4.modal-title 操作订单
+                        p(style='color:red;font-size:16;') 点击完成后，不可再修改，操作过程中也不要关闭窗口
+                    .modal-body
+                        .container-fluid
+                            .modal-information
+                            .modal-handle
+                                table.table.table-striped.table-hover.table-box.table-condensed.table-responsive#handletable
+                            .row
+                                form(name='addUnit' action='about:blank' method='post' target='rfFrame').form-horizontal#addUnitForm
+                                    .fieldset
+                                        .form-group
+                                            .col-lg-10.col-lg-offset-2.form-btn-box
+                                                button(type='button' data-dismiss='modal' style='margin-right:10px').btn.btn-danger.btn-lg 完成
+                            iframe(name='rfFrame' src='about:blank' style='display:none;')#rfFrame
+    <!-- Bootstrap core js -->
+    script(src='https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js')
+    | <script>window.jQuery || document.write('<script src="/javascripts/jquery.min.js"><\/script>')</script>
+    script(src='/javascripts/jquery.form.min.js')
+    script(src='https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js')
+    script(src='https://cdn.bootcss.com/bootstrap-table/1.11.1/bootstrap-table.js')
+    script(src='https://cdn.bootcss.com/bootstrap-table/1.11.1/locale/bootstrap-table-zh-CN.js')
+    script(src='/javascripts/back/bootstrap-editable.js')
+    script(src='https://cdn.bootcss.com/bootstrap-table/1.11.1/extensions/editable/bootstrap-table-editable.js')
+    script(src='/javascripts/back/bootstrap-datetimepicker.min.js')
+    script(src='/javascripts/back/planorders.js')
+
